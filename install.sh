@@ -5,7 +5,7 @@ YELLOW="\033[33m"
 TEXT="\033[0;39m"
 _BOLD=$(tput bold)
 _NORMAL=$(tput sgr0)
-BIN_DIR="~/.local/bin"
+BIN_DIR="$HOME/.local/bin"
 
 if [ ! -d $BIN_DIR ]
 then
@@ -14,6 +14,9 @@ then
 fi
 
 echo -e "\nInstalling wpman...\n" && sleep 0.3
-cp -v ./src/wpman $BIN_DIR/
-chmod +xv $BIN_DIR/wpman
+mkdir -pv $HOME/.local/share/wpman/
+cp -rv src/wpman $BIN_DIR/ --force
+cp -rv src/wpman_data $HOME/.local/share/wpman/ --force
+chmod +x $BIN_DIR/wpman/src/wpman --verbose
+chmod +x $HOME/.local/share/wpman/wpman_data/* --verbose
 echo -e "\n${GREEN}${_BOLD}wpman successfully installed!${TEXT}${_NORMAL}"
