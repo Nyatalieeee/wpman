@@ -1,0 +1,17 @@
+{
+    "name": "wpman",
+    "version": "1.0.0",
+    "description": "white person manager; pacman but for white people",
+    "main": "bin/index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [
+        "cli"
+    ],
+    "bin": {
+	"wpman": "./bin/index.js"
+    },
+    "author": "Natalie Raine",
+    "license": "ISC"
+}
